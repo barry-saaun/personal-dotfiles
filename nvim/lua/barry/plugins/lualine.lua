@@ -14,17 +14,16 @@ local new_colors = {
   violet = "#FF61EF",
   yellow = "#FFDA7B",
   black = "#000000",
+  mint = '#e5f4e3',
 }
 
 -- change solarized_dark theme colors
--- lualine_solarized_dark.normal.a.bg = new_colors.blue
--- lualine_solarized_dark.insert.a.bg = new_colors.green
 lualine_solarized_dark.visual.a.bg = new_colors.violet
 lualine_solarized_dark.command = {
   a = {
     gui = "bold",
-    bg = new_colors.yellow,
-    fg = new_colors.black, -- black
+    bg = new_colors.mint,
+    fg = new_colors.black,
   },
 }
 
@@ -44,7 +43,7 @@ lualine.setup({
       {
         "filename",
         file_status = true, -- displays file status (readonly status, modified status)
-        path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+        path = 0,           -- 0 = just filename, 1 = relative path, 2 = absolute path
       },
     },
     lualine_x = {
