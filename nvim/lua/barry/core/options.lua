@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+opt.scriptencoding = 'utf-8'
+opt.encoding = 'utf-8'
+
 opt.relativenumber = true
 opt.number = true
 
@@ -8,6 +11,9 @@ opt.shiftwidth = 2
 opt.softtabstop = 0
 opt.expandtab = true
 opt.autoindent = true
+opt.smartindent = true
+
+opt.shell = "Z"
 
 opt.wrap = false
 
