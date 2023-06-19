@@ -13,7 +13,6 @@ opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 
-opt.shell = "Z"
 
 opt.wrap = false
 

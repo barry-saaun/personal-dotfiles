@@ -26,13 +26,18 @@ telescope.setup({
     qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
     mappings = {
       i = {
-        ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-        ["<C-j>"] = actions.move_selection_next, -- move to next result
+        ["<C-k>"] = actions.move_selection_previous,                       -- move to prev result
+        ["<C-j>"] = actions.move_selection_next,                           -- move to next result
         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
       },
     },
   },
   extensions = {
+    fzf = {
+      fuzzy = true,
+      case_mode = 'smart_case',
+
+    },
     file_browser = {
       theme = "dropdown",
       -- disables netrw and use telescope-file-browser in its place
@@ -58,7 +63,6 @@ telescope.setup({
 })
 
 telescope.load_extension("file_browser")
-telescope.load_extension("fzf")
 telescope.load_extension("live_grep_args")
 
 vim.keymap.set("n", "sf", function()
