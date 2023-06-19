@@ -1,6 +1,6 @@
 require("barry.plugins-setup")
 require("barry.core.options")
-require("barry.core.keymaps")
+require("barry.core.maps")
 require("barry.core.highlights")
 require("barry.core.colorscheme")
 require("barry.core.macos")
