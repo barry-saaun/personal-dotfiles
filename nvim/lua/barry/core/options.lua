@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-opt.scriptencoding = 'utf-8'
+vim.scriptencoding = 'utf-8'
 opt.encoding = 'utf-8'
 
 opt.relativenumber = true
