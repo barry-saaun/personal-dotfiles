@@ -1,4 +1,4 @@
-require("barry.plugins-setup-back")
+require('barry.plugin-setup')
 require("barry.core.options")
 require("barry.core.maps")
 require("barry.core.highlights")
