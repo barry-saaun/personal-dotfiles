@@ -26,8 +26,6 @@ opt.background = "dark"
 opt.signcolumn = "yes"
 
 -- gruvbox theme
-vim.cmd([[colorscheme gruvbox]])
-
 opt.backspace = "indent,eol,start"
 
 opt.clipboard:append("unnamedplus")
