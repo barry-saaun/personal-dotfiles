@@ -77,6 +77,8 @@ local plugins = {
   'akinsho/nvim-bufferline.lua',
   'jose-elias-alvarez/typescript.nvim',
 
+  'L3MON4D3/LuaSnip',
+
   -- git plugins
   'lewis6991/gitsigns.nvim',
   'dinhhuy258/git.nvim', -- For git blame & browse
