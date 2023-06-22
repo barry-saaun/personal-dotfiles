@@ -43,10 +43,6 @@ local plugins = {
   'williamboman/mason-lspconfig.nvim',
 
   'glepnir/lspsaga.nvim', -- LSP UIs
-  -- snippets
-  'L3MON4D3/LuaSnip',
-  'saadparwaiz1/cmp_luasnip',
-  'rafamadriz/friendly-snippets',
   {
     'nvim-treesitter/nvim-treesitter',
     build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
