@@ -4,6 +4,8 @@
 /barry-dotfiles
 /karabiner
 /yarn
+/AstroNvim
+/NvChad
 
 #compiled lua sources
 luac.out

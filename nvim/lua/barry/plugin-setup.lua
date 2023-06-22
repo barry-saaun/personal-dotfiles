@@ -32,16 +32,21 @@ local plugins = {
   'nvim-lualine/lualine.nvim',       -- Statusline,
   'nvim-lua/plenary.nvim',           -- Common utilities
   'onsails/lspkind-nvim',            -- vscode-like pictograms
+  -- auto completing
   'hrsh7th/cmp-buffer',              -- nvim-cmp source for buffer words
   'hrsh7th/cmp-nvim-lsp',            -- nvim-cmp source for neovim's built-in LSP
   'hrsh7th/nvim-cmp',                -- Completion
+
   'neovim/nvim-lspconfig',           -- LSP
   'jose-elias-alvarez/null-ls.nvim', -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   'williamboman/mason.nvim',         -- LSP Package manager
   'williamboman/mason-lspconfig.nvim',
 
   'glepnir/lspsaga.nvim', -- LSP UIs
+  -- snippets
   'L3MON4D3/LuaSnip',
+  'saadparwaiz1/cmp_luasnip',
+  'rafamadriz/friendly-snippets',
   {
     'nvim-treesitter/nvim-treesitter',
     build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -74,6 +79,7 @@ local plugins = {
     build = function() vim.fn["mkdp#util#install"]() end,
   }),
   'akinsho/nvim-bufferline.lua',
+  'jose-elias-alvarez/typescript.nvim',
 
   -- git plugins
   'lewis6991/gitsigns.nvim',
