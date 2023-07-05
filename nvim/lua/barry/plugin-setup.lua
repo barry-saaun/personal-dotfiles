@@ -25,7 +25,7 @@ local plugins = {
     'ellisonleao/gruvbox.nvim',
     dependencies = { 'tjdevries/colorbuddy.nvim' }
   },
-
+  'szw/vim-maximizer',
   'folke/lsp-colors.nvim',
   'tpope/vim-surround',
   'christoomey/vim-tmux-navigator',
