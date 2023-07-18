@@ -118,7 +118,9 @@ nvim_lsp.cssls.setup {
 
 nvim_lsp.astro.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  filetypes = { 'astro' },
+  init_options = { typescript = {} },
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

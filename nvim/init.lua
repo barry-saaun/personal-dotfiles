@@ -2,11 +2,7 @@ require('barry.plugin-setup')
 require("barry.core.options")
 require("barry.core.maps")
 require("barry.core.highlights")
--- neosolarized theme
 require("barry.core.colorscheme")
--- gruvbox
--- require('barry.plugins.gruvbox')
-
 require("barry.core.macos")
 require("barry.core.wsl")
 require("barry.core.windows")
