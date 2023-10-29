@@ -1,0 +1,11 @@
+local status, indent_blankline = pcall(require, 'ibl')
+if not status then return end
+
+indent_blankline.setup {
+  indent = {
+    char = "▏"
+  },
+  whitespace = {
+    remove_blankline_trail = false,
+  }
+}
