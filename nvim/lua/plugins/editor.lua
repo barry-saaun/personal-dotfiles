@@ -13,13 +13,13 @@ return {
   },
   {
     "echasnovski/mini.hipatterns",
-    event = "BufReadPre",
+    even = "BufReadPre",
     opts = {
       highlighters = {
         hsl_color = {
           pattern = "hsl%(%d+,? %d+,? %d+%)",
           group = function(_, match)
-            local utils = require("craftzdog.utils")
+            local utils = require("barry.utils")
             local h, s, l = match:match("hsl%((%d+),? (%d+),? (%d+)%)")
             h, s, l = tonumber(h), tonumber(s), tonumber(l)
             local hex_color = utils.hslToHex(h, s, l)
@@ -51,6 +51,12 @@ return {
       },
       "nvim-telescope/telescope-file-browser.nvim",
     },
+    file_ignore_patterns = {
+      "./node_modules/*",
+      "node_modules",
+      "^node_modules/*",
+      "node_modules/*",
+    },
     keys = {
       {
         "<leader>ff",
@@ -68,6 +74,18 @@ return {
           builtin.find_files({
             no_ignore = false,
             hidden = true,
+            file_ignore_patterns = {
+              ".git/",
+              ".cache",
+              "%.o",
+              "%.a",
+              "%.out",
+              "%.class",
+              "%.pdf",
+              "%.mkv",
+              "%.mp4",
+              "%.zip",
+            },
           })
         end,
         desc = "Lists files in your current working directory, respects .gitignore",
