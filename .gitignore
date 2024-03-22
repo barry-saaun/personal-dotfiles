@@ -1,11 +1,9 @@
 /iterm2
-/tmux-back
-/tmux-back2
-/barry-dotfiles
 /karabiner
 /yarn
-/AstroNvim
-/NvChad
+/lazyvim.bak
+/nvim.bak
+/raycast
 
 #compiled lua sources
 luac.out

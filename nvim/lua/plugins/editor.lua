@@ -51,12 +51,6 @@ return {
       },
       "nvim-telescope/telescope-file-browser.nvim",
     },
-    file_ignore_patterns = {
-      "./node_modules/*",
-      "node_modules",
-      "^node_modules/*",
-      "node_modules/*",
-    },
     keys = {
       {
         "<leader>ff",
