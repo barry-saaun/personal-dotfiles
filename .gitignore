@@ -4,6 +4,9 @@
 /lazyvim.bak
 /nvim.bak
 /raycast
+/zed
+/thefuck
+/jo-nvim
 
 #compiled lua sources
 luac.out

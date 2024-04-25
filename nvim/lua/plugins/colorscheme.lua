@@ -1,10 +1,22 @@
+-- return {
+--   "craftzdog/solarized-osaka.nvim",
+--   lazy = true,
+--   priority = 100,
+--   opts = function()
+--     return {
+--       transparent = true,
+--     }
+--   end,
+-- }
+
 return {
-  "craftzdog/solarized-osaka.nvim",
+
+  "oxfist/night-owl.nvim",
   lazy = true,
   priority = 100,
   opts = function()
     return {
-      transparent = true,
+      transparent_background = true,
     }
   end,
 }
