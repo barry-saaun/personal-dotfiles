@@ -7,6 +7,7 @@
 /zed
 /thefuck
 /jo-nvim
+/tmux.bak
 
 #compiled lua sources
 luac.out
