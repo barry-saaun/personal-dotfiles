@@ -12,7 +12,9 @@ decorations = "buttonless"
 opacity = 0.5
 blur = true
 
+option_as_alt = "OnlyLeft"
+
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
 
-size = 17
+size = 16
