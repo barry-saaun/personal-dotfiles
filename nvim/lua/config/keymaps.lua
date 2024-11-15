@@ -33,39 +33,46 @@ keymap.set("n", "<TAB>", ":bn<CR>") -- go to the next buffer
 keymap.set("n", "<S-TAB>", ":bp<CR>") -- go to the previous buffer
 keymap.set("n", "<leader>bd", ":bd<CR>") -- delete the current buffer
 
-----------------------
--- Plugin Keybinds
-----------------------
+-- on/off toggle of inlay_hint, but by default it's off
+if vim.lsp.inlay_hint then
+  vim.lsp.inlay_hint.enable(false)
 
--- save
-keymap.set("n", "<leader>w", ":w<CR>")
+  vim.keymap.set("n", "<leader>uh", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, { desc = "Toggle Inlay Hint" })
+end
 
--- tmux navigator
-keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
-keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
-keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
-keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
-
--- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
-
--- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", ";r", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", ";t", "<cmd>Telescope help_tags<cr>") -- list available help tags
-keymap.set("n", ";e", "<cmd>Telescope diagnostics<cr>")
-keymap.set("n", ";;", "<cmd>Telescope resume<cr>")
-
--- telescope git commands (not on youtube nvim video)
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
-
--- restart lsp server (not on youtube nvim video)
-keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
--- dap
-keymap.set("n", "<leader>db", ":DapToggleBreakpoint <CR>")
-keymap.set("n", "<leader>dr", ":DapContinue <CR>")
+-- THESE ARE NOT NECESSARY WITH THE USE OF LAZYVIM
+-- ----------------------
+-- -- Plugin Keybinds
+-- ----------------------
+--
+-- -- tmux navigator
+-- keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+-- keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+-- keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+-- keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
+--
+-- -- vim-maximizer
+-- keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
+--
+-- -- telescope
+-- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+-- keymap.set("n", ";r", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+-- keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
+-- keymap.set("n", ";t", "<cmd>Telescope help_tags<cr>") -- list available help tags
+-- keymap.set("n", ";e", "<cmd>Telescope diagnostics<cr>")
+-- keymap.set("n", ";;", "<cmd>Telescope resume<cr>")
+--
+-- -- telescope git commands (not on youtube nvim video)
+-- keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+-- keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+-- keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
+-- keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+--
+-- -- restart lsp server (not on youtube nvim video)
+-- keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+--
+-- -- dap
+-- keymap.set("n", "<leader>db", ":DapToggleBreakpoint <CR>")
+-- keymap.set("n", "<leader>dr", ":DapContinue <CR>")

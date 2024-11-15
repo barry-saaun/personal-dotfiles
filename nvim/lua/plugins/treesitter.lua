@@ -1,35 +1,29 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "astro",
-        "typescript",
-        "javascript",
-        "cmake",
-        "cpp",
-        "css",
-        "gitignore",
-        "graphql",
-        "http",
-        "java",
-        "rust",
-        "php",
-        "scss",
-        "sql",
-        "svelte",
-      },
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    ensure_installed = {
+      "gitignore",
+      "graphql",
+      "http",
+      "rust",
+      "css",
+      "scss",
+      "sql",
+      "svelte",
+      "cmake",
+      "cpp",
+      "go",
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      --MDX
-      vim.filetype.add({
-        extension = {
-          mdx = "mdx",
-        },
-      })
-      vim.treesitter.language.register("markdown", "mdx")
-    end,
   },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+
+    -- MDX
+    vim.filetype.add({
+      extension = {
+        mdx = "mdx",
+      },
+    })
+    vim.treesitter.language.register("markdown", "mdx")
+  end,
 }

@@ -2,6 +2,7 @@ return {
   {
     enabled = false,
     "folke/flash.nvim",
+    ---@type Flash.Config
     opts = {
       search = {
         forward = true,
@@ -11,17 +12,21 @@ return {
       },
     },
   },
+
   {
     "echasnovski/mini.hipatterns",
-    even = "BufReadPre",
+    event = "BufReadPre",
     opts = {
       highlighters = {
         hsl_color = {
-          pattern = "hsl%(%d+,? %d+,? %d+%)",
+          pattern = "hsl%(%d+,? %d+%%?,? %d+%%?%)",
           group = function(_, match)
-            local utils = require("barry.utils")
-            local h, s, l = match:match("hsl%((%d+),? (%d+),? (%d+)%)")
-            h, s, l = tonumber(h), tonumber(s), tonumber(l)
+            local utils = require("solarized-osaka.hsl")
+            --- @type string, string, string
+            local nh, ns, nl = match:match("hsl%((%d+),? (%d+)%%?,? (%d+)%%?%)")
+            --- @type number?, number?, number?
+            local h, s, l = tonumber(nh), tonumber(ns), tonumber(nl)
+            --- @type string
             local hex_color = utils.hslToHex(h, s, l)
             return MiniHipatterns.compute_hex_color_group(hex_color, "bg")
           end,
@@ -42,6 +47,7 @@ return {
       },
     },
   },
+
   {
     "telescope.nvim",
     dependencies = {
@@ -53,7 +59,7 @@ return {
     },
     keys = {
       {
-        "<leader>ff",
+        "<leader>fP",
         function()
           require("telescope.builtin").find_files({
             cwd = require("lazy.core.config").options.root,
@@ -68,18 +74,6 @@ return {
           builtin.find_files({
             no_ignore = false,
             hidden = true,
-            file_ignore_patterns = {
-              ".git/",
-              ".cache",
-              "%.o",
-              "%.a",
-              "%.out",
-              "%.class",
-              "%.pdf",
-              "%.mkv",
-              "%.mp4",
-              "%.zip",
-            },
           })
         end,
         desc = "Lists files in your current working directory, respects .gitignore",
@@ -88,12 +82,14 @@ return {
         ";r",
         function()
           local builtin = require("telescope.builtin")
-          builtin.live_grep()
+          builtin.live_grep({
+            additional_args = { "--hidden" },
+          })
         end,
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
-        "<leader>fb",
+        "\\\\",
         function()
           local builtin = require("telescope.builtin")
           builtin.buffers()
